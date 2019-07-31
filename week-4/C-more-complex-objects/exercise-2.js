@@ -5,19 +5,31 @@
     and make sure it outputs the correct results
 */
 
-var newCurrentOwner = {
-  firstName: "Margaret",
-  lastName: "Conway"
+var house = {
+  address: "1 Kinning Park",
+  previousOwners: ["Claire M.", "John A."],
+  currentOwner: {
+    firstName: "Margaret",
+    lastName: "Conway"
+  }
 };
 
-var house = {
-  isForSale: false,
-  address: "1 Kinning Park",
-  previousOwners: ["Claire M.", "Stephen B."],
-  currentOwner: newCurrentOwner
+
+
+var newCurrentOwner = {
+  firstName: "Georgina",
+  lastName: "Hernandez"
 };
+
+house.currentOwner = newCurrentOwner
+house.previousOwners[1] = "Stephen B."
+house.isForSale = false
+
+console.log(house)
+
 /*
   DO NOT EDIT ANYTHING ABOVE THIS LINE
+
 
   WRITE YOUR CODE BELOW
 */
@@ -31,10 +43,10 @@ var house = {
 */
 console.log(
   "Expected result: true. Actual result: " +
-    (house.currentOwner == newCurrentOwner)
+  (house.currentOwner == newCurrentOwner)
 );
 console.log(
   "Expected result: Claire M., Stephen B. Actual result: " +
-    house.previousOwners.toString()
+  house.previousOwners.toString()
 );
 console.log("Expected result: false. Actual result: " + house.isForSale);
